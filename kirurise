@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class MyFirstJava {
+    public static void main(String[] args)
+    {
+        CalculateMax();
+        CalculateSumAndAverage();
+        CalculateQuadratic();
+
+    }
+
+    public static void CalculateMax()
+    {
+        System.out.println("Please Enter the 1st Nuumber");
+        Scanner reader = new Scanner(System.in);
+        int num1 = reader.nextInt();
+        System.out.println("Please Enter the 2st Nuumber");
+        int num2 = reader.nextInt();
+        System.out.println("Please Enter the 3st Nuumber");
+        int num3 = reader.nextInt();
+
+        int max = num1;
+        if(num2 > num1 && num2 > num3)
+            max = num2;
+        else if(num3 > num2 && num3 > num1)
+            max = num3;
+        System.out.println("The maximum number is : " + max);
+    }
+
+    public static void CalculateSumAndAverage()
+    {
+        System.out.println("Please enter the numeber:");
+        Scanner reader = new Scanner(System.in);
+        float num = reader.nextFloat();
+        int counter = 0;
+        float sum = 0;
+
+        while(num != -1)
+        {
+            System.out.println("Please enter the next number: ");
+            sum = sum + num;
+            num = reader.nextInt();
+            counter++;
+        }
+        System.out.println("The sum is : " + sum);
+        System.out.println("The average is : " + sum/counter);
+    }
+
+    public static void CalculateQuadratic()
+    {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Please Enter the 1st number: ");
+        double a = reader.nextDouble();
+        System.out.println("Please Enter the 2nd number: ");
+        double b = reader.nextDouble();
+        System.out.println("Please Enter the 3rd number: ");
+        double c = reader.nextDouble();
+
+        if ((Math.pow(b,2) - 4*a*c) < 0)
+            System.out.println("negative value :-(");
+        else {
+            double x1 = (-b - (Math.sqrt(Math.pow(b, 2) - 4 * a * c))) / 2 * a;
+            double x2 = (-b + (Math.sqrt(Math.pow(b, 2) - 4 * a * c))) / 2 * a;
+            System.out.println("x1 : ==> " + x1);
+            System.out.println("x2 : ==> " + x2);
+
+            checkResult(a, b, c, x1, x2);
+        }
+    }
+
+    public static void checkResult(double a, double b, double c, double x1, double x2){
+        double checkX1 = (a*Math.pow(x1, 2)) + ((b*x1) + c);
+        double checkX2 = (a*Math.pow(x1, 2)) + ((b*x1) + c);
+
+        System.out.println(checkX1);
+        System.out.println(checkX2);
+    }
+
+}
