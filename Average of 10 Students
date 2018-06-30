@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class MyArray {
+    public static void main(String[] Args)
+    {
+        // Write a program that allows you to enter the height of 10 students,
+        // then show the average height, and how many elements are above average,
+        // how many are below average.
+        Scanner reader = new Scanner(System.in);
+
+        int counter = 0;
+        double sum = 0;
+        double average = 0;
+        int [] StudentHeights = new int[10];
+        while (counter < 10)
+        {
+            System.out.println("Enter the height of student:  " + (counter+1));
+            int StudHeight = reader.nextInt();
+            sum = sum + StudHeight;
+            StudentHeights[counter] = StudHeight;
+            counter++;
+        }
+
+        average = sum/counter;
+        int NumberOfStudentsAboveAverage = 0;
+        int NumberOfStudentsBelowAverage = 0;
+
+        for(int i=0; i<counter; i++)
+        {
+            if(StudentHeights[i] > average)
+                NumberOfStudentsAboveAverage++;
+            else
+                NumberOfStudentsBelowAverage++;
+        }
+
+        System.out.println("Average = " + average);
+        System.out.println("Number of students above average is: " + NumberOfStudentsAboveAverage);
+        System.out.println("Number of students below average is: " + NumberOfStudentsBelowAverage);
+    }
+}
