@@ -5,10 +5,10 @@ public class RockPaperScissor {
     public static void main(String[] Args)
     {
         Choice();
-        Scanner reader = new Scanner(System.in);
-        int userTurn;
-
         Random random = new Random();
+        Scanner reader = new Scanner(System.in);
+
+        int userTurn;
         int computerTurn;
 
         int userScore = 0;
@@ -22,7 +22,7 @@ public class RockPaperScissor {
 
             if(userTurn == computerTurn)
             {
-                System.out.println("Its a draw");
+                System.out.println("It's a tie, please go again");
             }
             else if(userTurn == 1 && computerTurn == 2) {
                 userScore++;
