@@ -1,0 +1,82 @@
+// ************* MotorBike Class ***************//
+
+public class MotorBike {
+
+    public int speed;
+    public String color;
+    public int maxSpeed;
+
+    public MotorBike()
+    {
+        this.speed = 0;
+        this.maxSpeed = 25;
+        this.color = "white";
+    }
+
+    public MotorBike(int speed, int maxSpeed, String color)
+    {
+        this.speed = speed;
+        this.maxSpeed = maxSpeed;
+        this.color = color;
+    }
+
+    public void accelerate(int amount)
+    {
+        int speed = getSpeed() + amount;
+        setSpeed(speed);
+    }
+
+    public void breakSpeed(int amount)
+    {
+        int speed = getSpeed() - amount;
+        setSpeed(speed);
+    }
+
+    // ********* Setters ***********//
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    //********* Getters **********//
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public String toString(){
+        return "Speed is " + this.speed + " the maximum speed is " + this.maxSpeed + " color is " + this.color;
+    }
+
+}
+
+
+// ***************** Main Method Class ********************* //
+
+public class MotorBikeProgram extends MotorBike{
+    public static void main(String [] args)
+    {
+        MotorBike myBike = new MotorBike(10, 65, "Blue");
+        MotorBike mySecondBike = new MotorBike();
+        myBike.accelerate(10);
+
+        System.out.println(myBike);
+        System.out.println(mySecondBike);
+    }
+}
+
